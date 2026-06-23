@@ -1,0 +1,276 @@
+export type Lang = "en" | "fr" | "ar";
+
+export const translations = {
+  en: {
+    dir: "ltr" as const,
+    nav: {
+      home: "Home", about: "About", services: "Services",
+      portfolio: "Portfolio", process: "Process", pricing: "Pricing",
+      contact: "Contact", cta: "Start a Project",
+    },
+    hero: {
+      eyebrow: "Digital Agency",
+      headline: "Digital Solutions Without Limits",
+      sub: "We transform ideas into exceptional digital experiences.",
+      cta1: "Start Your Project", cta2: "Explore Services",
+      scroll: "Scroll to discover",
+    },
+    services: {
+      label: "What We Do",
+      title: "Services Built for Impact",
+      sub: "From concept to launch — every discipline, one studio.",
+      items: [
+        { icon: "◈", name: "Website Development", desc: "Fast, beautiful, conversion-driven websites built with modern frameworks and obsessive attention to detail." },
+        { icon: "◉", name: "Mobile Apps", desc: "Native and cross-platform apps that users love — on iOS and Android." },
+        { icon: "◇", name: "UI/UX Design", desc: "Interfaces that feel inevitable. Every pixel, every interaction — designed with purpose." },
+        { icon: "◆", name: "Branding", desc: "Visual identities that endure. Strategy, typography, color, and mark — crafted to last." },
+        { icon: "◎", name: "AI Solutions", desc: "Intelligent systems that learn and adapt. We integrate AI where it creates real advantage." },
+        { icon: "⬡", name: "Automation", desc: "Eliminate repetition. We automate workflows so your team can focus on what matters." },
+        { icon: "▣", name: "Custom Software", desc: "Bespoke digital tools engineered to your exact requirements." },
+        { icon: "◻", name: "E-commerce", desc: "Online stores built to sell. Seamless checkout, powerful back-end, beautiful front-end." },
+        { icon: "◈", name: "Digital Strategy", desc: "Clarity before execution. We map the right path before writing a single line of code." },
+      ],
+    },
+    about: {
+      label: "Who We Are",
+      headline: "We Build What Others Call Impossible",
+      body: "ROMA is a digital agency built on a simple belief: every idea deserves exceptional execution. We partner with individuals, startups, companies, and organizations to transform vision into reality — across every discipline, on every platform.",
+      mission: "To build digital products that make people's lives better — one project at a time.",
+      vision: "To become the most trusted digital studio for ambitious creators worldwide.",
+      values: ["Innovation", "Excellence", "Creativity", "Trust", "Impact"],
+    },
+    portfolio: {
+      label: "Our Work", title: "Selected Projects",
+      sub: "A curated selection of work we're proud of.",
+      items: [
+        { cat: "Branding + Web", name: "Lumière Cosmetics", desc: "Complete digital identity for a French luxury beauty brand.", result: "+340% online conversion" },
+        { cat: "Mobile App", name: "NomadPay", desc: "Cross-border payment app for digital nomads.", result: "50,000 users in 3 months" },
+        { cat: "AI Solution", name: "LegalMind", desc: "AI-powered legal document analyzer for law firms.", result: "80% time reduction" },
+        { cat: "E-commerce", name: "Noir Maison", desc: "Premium home décor e-commerce experience.", result: "2.1M revenue in Year 1" },
+      ],
+    },
+    process: {
+      label: "How We Work", title: "From Idea to Impact",
+      sub: "A rigorous process that ensures nothing is left to chance.",
+      steps: [
+        { n: "01", name: "Discovery", desc: "We listen deeply to understand your world, your users, and your goals." },
+        { n: "02", name: "Strategy", desc: "We map the most direct path from where you are to where you want to be." },
+        { n: "03", name: "Design", desc: "We craft interfaces and identities that feel inevitable from the first glance." },
+        { n: "04", name: "Development", desc: "We build with precision — clean code, modern architecture, zero compromise." },
+        { n: "05", name: "Testing", desc: "We stress-test every corner before anything reaches your users." },
+        { n: "06", name: "Launch", desc: "We deploy with care, monitor closely, and ensure a flawless go-live." },
+        { n: "07", name: "Support", desc: "We stay. Your growth is our long-term responsibility." },
+      ],
+    },
+    pricing: {
+      label: "Investment", title: "Priced for Ambition",
+      sub: "Transparent value. No hidden fees. Real results.",
+      plans: [
+        { name: "Starter", price: "From $2,500", desc: "For individuals and early-stage startups ready to launch.", highlight: false, features: ["5-page website", "Mobile responsive", "Basic SEO", "1 revision round", "2-week delivery", "30-day support"] },
+        { name: "Professional", price: "From $8,000", desc: "For growing businesses that demand excellence.", highlight: true, features: ["Custom web app or mobile app", "Advanced UI/UX design", "Full branding suite", "3 revision rounds", "CMS integration", "90-day support"] },
+        { name: "Enterprise", price: "Custom", desc: "For organizations building complex digital ecosystems.", highlight: false, features: ["Custom software development", "AI & automation integration", "Dedicated team", "Unlimited revisions", "Priority delivery", "12-month retainer support"] },
+      ],
+    },
+    testimonials: {
+      label: "Voices", title: "What Our Clients Say",
+      items: [
+        { quote: "ROMA didn't just build our app — they understood our mission and elevated it beyond what we imagined.", name: "Sophia Laurent", role: "Founder, NomadPay" },
+        { quote: "The most professional digital team I've worked with. Delivered on time, on budget, and beyond expectations.", name: "Marcus Chen", role: "CEO, LegalMind" },
+        { quote: "Our new website tripled our conversion rate in the first month. ROMA is in a different league.", name: "Amira Benali", role: "CMO, Lumière Cosmetics" },
+      ],
+    },
+    contact: {
+      label: "Let's Talk", title: "Start Your Project",
+      sub: "Tell us about your vision. We'll tell you how to build it.",
+      form: {
+        name: "Full Name", email: "Email Address", company: "Company / Organization",
+        type: "Project Type", budget: "Budget Range", message: "Tell us about your project", send: "Send Message",
+        types: ["Website Development", "Mobile App", "UI/UX Design", "Branding", "AI Solution", "E-commerce", "Custom Software", "Other"],
+        budgets: ["Under $5,000", "$5,000 – $15,000", "$15,000 – $50,000", "$50,000+", "Let's discuss"],
+      },
+    },
+    footer: { tagline: "Whatever you imagine, we build.", rights: "All rights reserved." },
+  },
+
+  fr: {
+    dir: "ltr" as const,
+    nav: {
+      home: "Accueil", about: "À Propos", services: "Services",
+      portfolio: "Portfolio", process: "Processus", pricing: "Tarifs",
+      contact: "Contact", cta: "Démarrer un Projet",
+    },
+    hero: {
+      eyebrow: "Agence Digitale",
+      headline: "Solutions Digitales Sans Limites",
+      sub: "Nous transformons les idées en expériences digitales exceptionnelles.",
+      cta1: "Démarrer Votre Projet", cta2: "Explorer les Services",
+      scroll: "Défiler pour découvrir",
+    },
+    services: {
+      label: "Ce Que Nous Faisons",
+      title: "Des Services Pensés pour l'Impact",
+      sub: "Du concept au lancement — chaque discipline, un seul studio.",
+      items: [
+        { icon: "◈", name: "Développement Web", desc: "Sites rapides, beaux et conçus pour convertir. Construits avec les frameworks modernes." },
+        { icon: "◉", name: "Applications Mobiles", desc: "Apps natives et cross-platform que les utilisateurs adorent — iOS et Android." },
+        { icon: "◇", name: "Design UI/UX", desc: "Des interfaces qui semblent évidentes. Chaque pixel, chaque interaction — conçus avec intention." },
+        { icon: "◆", name: "Identité de Marque", desc: "Des identités visuelles durables. Stratégie, typographie, couleur et logotype — pensés pour durer." },
+        { icon: "◎", name: "Solutions IA", desc: "Des systèmes intelligents qui apprennent et s'adaptent. Nous intégrons l'IA là où elle crée un avantage réel." },
+        { icon: "⬡", name: "Automatisation", desc: "Éliminez la répétition. Nous automatisons les workflows pour que votre équipe se concentre sur l'essentiel." },
+        { icon: "▣", name: "Logiciel Sur Mesure", desc: "Des outils digitaux sur mesure, conçus selon vos exigences exactes." },
+        { icon: "◻", name: "E-commerce", desc: "Des boutiques en ligne pensées pour vendre. Paiement fluide, back-end puissant, front-end élégant." },
+        { icon: "◈", name: "Stratégie Digitale", desc: "La clarté avant l'exécution. Nous traçons la bonne voie avant d'écrire une seule ligne de code." },
+      ],
+    },
+    about: {
+      label: "Qui Sommes-Nous",
+      headline: "Nous Construisons Ce Que D'Autres Appellent Impossible",
+      body: "ROMA est une agence digitale fondée sur une conviction simple : chaque idée mérite une exécution exceptionnelle. Nous accompagnons individus, startups, entreprises et organisations pour transformer leur vision en réalité — dans chaque discipline, sur chaque plateforme.",
+      mission: "Créer des produits digitaux qui améliorent la vie des gens — projet après projet.",
+      vision: "Devenir le studio digital de référence pour les créateurs ambitieux du monde entier.",
+      values: ["Innovation", "Excellence", "Créativité", "Confiance", "Impact"],
+    },
+    portfolio: {
+      label: "Nos Réalisations", title: "Projets Sélectionnés",
+      sub: "Une sélection soignée des projets dont nous sommes fiers.",
+      items: [
+        { cat: "Branding + Web", name: "Lumière Cosmetics", desc: "Identité digitale complète pour une marque de beauté de luxe française.", result: "+340% conversion en ligne" },
+        { cat: "Application Mobile", name: "NomadPay", desc: "Application de paiement transfrontalier pour nomades digitaux.", result: "50 000 utilisateurs en 3 mois" },
+        { cat: "Solution IA", name: "LegalMind", desc: "Analyseur de documents juridiques alimenté par l'IA.", result: "80% de réduction du temps de traitement" },
+        { cat: "E-commerce", name: "Noir Maison", desc: "Expérience e-commerce premium pour la décoration intérieure.", result: "2,1M€ de CA la 1re année" },
+      ],
+    },
+    process: {
+      label: "Notre Méthode", title: "De l'Idée à l'Impact",
+      sub: "Un processus rigoureux qui ne laisse rien au hasard.",
+      steps: [
+        { n: "01", name: "Découverte", desc: "Nous écoutons profondément pour comprendre votre univers, vos utilisateurs et vos objectifs." },
+        { n: "02", name: "Stratégie", desc: "Nous traçons le chemin le plus direct entre où vous êtes et où vous voulez être." },
+        { n: "03", name: "Design", desc: "Nous créons des interfaces et des identités qui semblent inévitables dès le premier regard." },
+        { n: "04", name: "Développement", desc: "Nous construisons avec précision — code propre, architecture moderne, zéro compromis." },
+        { n: "05", name: "Tests", desc: "Nous testons chaque recoin avant que quoi que ce soit n'atteigne vos utilisateurs." },
+        { n: "06", name: "Lancement", desc: "Nous déployons avec soin, surveillons de près et assurons un go-live sans faille." },
+        { n: "07", name: "Support", desc: "Nous restons. Votre croissance est notre responsabilité à long terme." },
+      ],
+    },
+    pricing: {
+      label: "Investissement", title: "Tarifé pour l'Ambition",
+      sub: "Valeur transparente. Sans frais cachés. Des résultats réels.",
+      plans: [
+        { name: "Starter", price: "À partir de 2 500€", desc: "Pour les particuliers et les startups prêts à se lancer.", highlight: false, features: ["Site 5 pages", "Responsive mobile", "SEO de base", "1 tour de révision", "Livraison en 2 semaines", "30 jours de support"] },
+        { name: "Professionnel", price: "À partir de 8 000€", desc: "Pour les entreprises en croissance qui exigent l'excellence.", highlight: true, features: ["Web app ou app mobile sur mesure", "Design UI/UX avancé", "Suite de branding complète", "3 tours de révisions", "Intégration CMS", "90 jours de support"] },
+        { name: "Entreprise", price: "Sur devis", desc: "Pour les organisations construisant des écosystèmes digitaux complexes.", highlight: false, features: ["Développement logiciel sur mesure", "Intégration IA & automatisation", "Équipe dédiée", "Révisions illimitées", "Livraison prioritaire", "Retainer 12 mois"] },
+      ],
+    },
+    testimonials: {
+      label: "Témoignages", title: "Ce Que Disent Nos Clients",
+      items: [
+        { quote: "ROMA n'a pas seulement construit notre app — ils ont compris notre mission et l'ont élevée au-delà de ce qu'on imaginait.", name: "Sophia Laurent", role: "Fondatrice, NomadPay" },
+        { quote: "L'équipe digitale la plus professionnelle avec laquelle j'ai travaillé. Livré dans les délais, dans le budget, et au-delà des attentes.", name: "Marcus Chen", role: "CEO, LegalMind" },
+        { quote: "Notre nouveau site a triplé notre taux de conversion le premier mois. ROMA est dans une autre catégorie.", name: "Amira Benali", role: "CMO, Lumière Cosmetics" },
+      ],
+    },
+    contact: {
+      label: "Parlons-En", title: "Démarrez Votre Projet",
+      sub: "Parlez-nous de votre vision. Nous vous dirons comment la construire.",
+      form: {
+        name: "Nom Complet", email: "Adresse E-mail", company: "Entreprise / Organisation",
+        type: "Type de Projet", budget: "Budget", message: "Parlez-nous de votre projet", send: "Envoyer le Message",
+        types: ["Développement Web", "Application Mobile", "Design UI/UX", "Branding", "Solution IA", "E-commerce", "Logiciel Sur Mesure", "Autre"],
+        budgets: ["Moins de 5 000€", "5 000€ – 15 000€", "15 000€ – 50 000€", "50 000€+", "À discuter"],
+      },
+    },
+    footer: { tagline: "Tout ce que vous imaginez, nous le construisons.", rights: "Tous droits réservés." },
+  },
+
+  ar: {
+    dir: "rtl" as const,
+    nav: {
+      home: "الرئيسية", about: "من نحن", services: "خدماتنا",
+      portfolio: "أعمالنا", process: "منهجيتنا", pricing: "الأسعار",
+      contact: "تواصل معنا", cta: "ابدأ مشروعك",
+    },
+    hero: {
+      eyebrow: "وكالة رقمية",
+      headline: "حلول رقمية بلا حدود",
+      sub: "نحوّل الأفكار إلى تجارب رقمية استثنائية.",
+      cta1: "ابدأ مشروعك", cta2: "استكشف خدماتنا",
+      scroll: "انزل للاستكشاف",
+    },
+    services: {
+      label: "ماذا نقدم",
+      title: "خدمات صُمِّمت للتأثير",
+      sub: "من الفكرة إلى الإطلاق — كل التخصصات، في استوديو واحد.",
+      items: [
+        { icon: "◈", name: "تطوير المواقع", desc: "مواقع سريعة وجميلة تحقق نتائج ملموسة. مبنية بأحدث التقنيات مع اهتمام دقيق بكل التفاصيل." },
+        { icon: "◉", name: "تطبيقات الجوال", desc: "تطبيقات أصلية ومتعددة المنصات يحبها المستخدمون — على iOS وAndroid." },
+        { icon: "◇", name: "تصميم UI/UX", desc: "واجهات تبدو بديهية وحتمية. كل بكسل، كل تفاعل — مصمم بهدف واضح." },
+        { icon: "◆", name: "الهوية البصرية", desc: "هويات بصرية راسخة. استراتيجية وطباعة ولون وشعار — مصمم ليدوم." },
+        { icon: "◎", name: "حلول الذكاء الاصطناعي", desc: "أنظمة ذكية تتعلم وتتكيف. ندمج الذكاء الاصطناعي حيث يخلق ميزة حقيقية." },
+        { icon: "⬡", name: "الأتمتة", desc: "تخلص من التكرار. نؤتمت سير العمل حتى يركز فريقك على ما يهم فعلاً." },
+        { icon: "▣", name: "برمجيات مخصصة", desc: "أدوات رقمية مصممة حسب متطلباتك الدقيقة تماماً." },
+        { icon: "◻", name: "التجارة الإلكترونية", desc: "متاجر إلكترونية مبنية للبيع. دفع سلس، خلفية قوية، واجهة أمامية أنيقة." },
+        { icon: "◈", name: "الاستراتيجية الرقمية", desc: "الوضوح قبل التنفيذ. نرسم المسار الصحيح قبل كتابة سطر كود واحد." },
+      ],
+    },
+    about: {
+      label: "من نحن",
+      headline: "نبني ما يسميه الآخرون مستحيلاً",
+      body: "ROMA وكالة رقمية تأسست على قناعة بسيطة: كل فكرة تستحق تنفيذاً استثنائياً. نتشارك مع الأفراد والشركات الناشئة والمؤسسات لتحويل رؤيتهم إلى واقع — في كل تخصص، على كل منصة.",
+      mission: "بناء منتجات رقمية تحسّن حياة الناس — مشروعاً تلو الآخر.",
+      vision: "أن نكون الاستوديو الرقمي الأكثر ثقة للمبدعين الطموحين حول العالم.",
+      values: ["الابتكار", "التميز", "الإبداع", "الثقة", "الأثر"],
+    },
+    portfolio: {
+      label: "أعمالنا", title: "مشاريع مختارة",
+      sub: "مجموعة مختارة بعناية من أعمالنا التي نفخر بها.",
+      items: [
+        { cat: "هوية + موقع", name: "Lumière Cosmetics", desc: "هوية رقمية متكاملة لعلامة تجمال فاخرة فرنسية.", result: "+340% في التحويلات الإلكترونية" },
+        { cat: "تطبيق جوال", name: "NomadPay", desc: "تطبيق دفع عابر للحدود للرحّالة الرقميين.", result: "50,000 مستخدم في 3 أشهر" },
+        { cat: "حل ذكاء اصطناعي", name: "LegalMind", desc: "محلل مستندات قانونية مدعوم بالذكاء الاصطناعي.", result: "خفض 80% من وقت المعالجة" },
+        { cat: "تجارة إلكترونية", name: "Noir Maison", desc: "تجربة تسوق إلكتروني فاخرة لديكور المنازل.", result: "2.1 مليون دولار في السنة الأولى" },
+      ],
+    },
+    process: {
+      label: "كيف نعمل", title: "من الفكرة إلى الأثر",
+      sub: "منهجية صارمة لا تترك شيئاً للصدفة.",
+      steps: [
+        { n: "01", name: "الاستكشاف", desc: "نستمع بعمق لفهم عالمك ومستخدميك وأهدافك." },
+        { n: "02", name: "الاستراتيجية", desc: "نرسم أقصر مسار بين ما أنت عليه وما تريد أن تكون." },
+        { n: "03", name: "التصميم", desc: "نصنع واجهات وهويات تبدو حتمية من النظرة الأولى." },
+        { n: "04", name: "التطوير", desc: "نبني بدقة — كود نظيف، بنية حديثة، لا تنازل." },
+        { n: "05", name: "الاختبار", desc: "نختبر كل زاوية قبل أن يصل أي شيء لمستخدميك." },
+        { n: "06", name: "الإطلاق", desc: "نطلق بعناية، نراقب عن كثب، ونضمن انطلاقة لا عيب فيها." },
+        { n: "07", name: "الدعم", desc: "نبقى معك. نموك مسؤوليتنا على المدى البعيد." },
+      ],
+    },
+    pricing: {
+      label: "الاستثمار", title: "أسعار بمستوى الطموح",
+      sub: "قيمة شفافة. بدون رسوم خفية. نتائج حقيقية.",
+      plans: [
+        { name: "Starter", price: "من 2,500$", desc: "للأفراد والشركات الناشئة المستعدة للانطلاق.", highlight: false, features: ["موقع 5 صفحات", "متجاوب مع الجوال", "SEO أساسي", "جولة مراجعة واحدة", "تسليم خلال أسبوعين", "دعم 30 يوماً"] },
+        { name: "Professional", price: "من 8,000$", desc: "للشركات النامية التي تطالب بالتميز.", highlight: true, features: ["تطبيق ويب أو جوال مخصص", "تصميم UI/UX متقدم", "حزمة هوية بصرية كاملة", "3 جولات مراجعة", "دمج CMS", "دعم 90 يوماً"] },
+        { name: "Enterprise", price: "حسب الطلب", desc: "للمؤسسات التي تبني أنظمة رقمية معقدة.", highlight: false, features: ["تطوير برمجيات مخصصة", "دمج AI وأتمتة", "فريق مخصص", "مراجعات غير محدودة", "تسليم ذو أولوية", "عقد دعم 12 شهراً"] },
+      ],
+    },
+    testimonials: {
+      label: "آراء العملاء", title: "ماذا يقول عملاؤنا",
+      items: [
+        { quote: "ROMA لم تبنِ تطبيقنا فحسب — بل فهمت رسالتنا وأخذتها إلى ما هو أبعد مما تخيلناه.", name: "صوفيا لوران", role: "مؤسِّسة، NomadPay" },
+        { quote: "أكثر فريق رقمي احترافية عملت معه. تسليم في الموعد، في الميزانية، وما هو أبعد من التوقعات.", name: "ماركوس تشن", role: "CEO، LegalMind" },
+        { quote: "موقعنا الجديد ضاعف معدل التحويل ثلاث مرات في الشهر الأول. ROMA في مستوى مختلف تماماً.", name: "أميرة بن علي", role: "CMO، Lumière Cosmetics" },
+      ],
+    },
+    contact: {
+      label: "لنتحدث", title: "ابدأ مشروعك",
+      sub: "أخبرنا عن رؤيتك. سنخبرك كيف نبنيها.",
+      form: {
+        name: "الاسم الكامل", email: "البريد الإلكتروني", company: "الشركة / المؤسسة",
+        type: "نوع المشروع", budget: "الميزانية", message: "أخبرنا عن مشروعك", send: "إرسال الرسالة",
+        types: ["تطوير مواقع", "تطبيق جوال", "تصميم UI/UX", "هوية بصرية", "حل ذكاء اصطناعي", "تجارة إلكترونية", "برمجيات مخصصة", "أخرى"],
+        budgets: ["أقل من 5,000$", "5,000$ – 15,000$", "15,000$ – 50,000$", "أكثر من 50,000$", "للنقاش"],
+      },
+    },
+    footer: { tagline: "كل ما تتخيله، نحن نبنيه.", rights: "جميع الحقوق محفوظة." },
+  },
+};

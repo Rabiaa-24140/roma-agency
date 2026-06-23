@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #7A1E2C; border-radius: 2px; }
+
+button { cursor: pointer; border: none; background: none; }
+input, textarea, select { outline: none; }
+a { text-decoration: none; color: inherit; }
+
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── BUTTONS ── */
+.roma-btn-primary {
+  background: #7A1E2C;
+  color: #F7F3EE;
+  padding: 14px 32px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid #7A1E2C;
+  transition: all 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+}
+.roma-btn-primary:hover { background: #8F2333; border-color: #8F2333; }
+
+.roma-btn-ghost {
+  background: transparent;
+  color: inherit;
+  padding: 14px 32px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+}
+.roma-btn-ghost:hover { opacity: 1; }
+
+/* ── NAV ── */
+.nav-link {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color 0.2s;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.nav-link:hover, .nav-link.active { opacity: 1; color: #7A1E2C; }
+
+/* ── CARDS ── */
+.service-card:hover { border-color: #7A1E2C !important; }
+.portfolio-card:hover .portfolio-overlay { opacity: 1 !important; }
+.pricing-card:hover { transform: translateY(-4px); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .hero-headline { font-size: clamp(42px, 10vw, 72px) !important; }
+  .section-title { font-size: clamp(36px, 8vw, 64px) !important; }
+  .services-grid { grid-template-columns: 1fr !important; }
+  .portfolio-grid { grid-template-columns: 1fr !important; }
+  .process-grid { grid-template-columns: 1fr 1fr !important; }
+  .pricing-grid { grid-template-columns: 1fr !important; }
+  .contact-grid { grid-template-columns: 1fr !important; }
+  .about-grid { grid-template-columns: 1fr !important; }
+  .footer-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .nav-desktop { display: none !important; }
+  .mobile-menu-btn { display: flex !important; }
+  .hero-ctas { flex-direction: column !important; align-items: flex-start !important; }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu-btn { display: none !important; }
+  .mobile-menu { display: none !important; }
+}
