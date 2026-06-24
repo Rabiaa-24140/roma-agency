@@ -3,27 +3,35 @@ interface RomaLogoProps {
   size?: number;
 }
 
-export default function RomaLogo({ color = "#7A1E2C", size = 120 }: RomaLogoProps) {
+export default function RomaLogo({ color = "#7A1E2C", size = 140 }: RomaLogoProps) {
+  // 4-pointed sparkle star centered on the O (cx=97, cy=52)
+  const sparkle = "M 97,46 L 98.2,50.8 L 103,52 L 98.2,53.2 L 97,58 L 95.8,53.2 L 91,52 L 95.8,50.8 Z";
+
   return (
     <svg
       width={size}
-      height={size * 0.45}
-      viewBox="0 0 280 110"
+      height={size * 0.42}
+      viewBox="0 0 300 116"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <text
-        x="10" y="90"
-        fontFamily="'Cormorant Garamond', 'Playfair Display', serif"
-        fontSize="96"
+        x="6"
+        y="92"
+        fontFamily="'Bodoni Moda', 'Cormorant Garamond', 'Playfair Display', serif"
+        fontSize="98"
         fontWeight="300"
         fill={color}
-        letterSpacing="6"
+        letterSpacing="2"
       >
         ROMA
       </text>
-      <circle cx="85" cy="50" r="32" stroke={color} strokeWidth="1" fill="none" opacity="0.4" />
-      <circle cx="85" cy="50" r="2" fill={color} opacity="0.6" />
+
+      {/* Thin orbital ring centered on the O */}
+      <circle cx="97" cy="52" r="36" stroke={color} strokeWidth="0.75" fill="none" />
+
+      {/* 4-pointed sparkle inside the ring */}
+      <path d={sparkle} fill={color} />
     </svg>
   );
 }
