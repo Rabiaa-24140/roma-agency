@@ -31,12 +31,12 @@ export default function RomaApp() {
   const isRTL = t.dir === "rtl";
 
   /* ── Color tokens ── */
-  const bg         = dark ? "#0D0B1F" : "#F4F1EE";
-  const surface    = dark ? "#161230" : "#FFFFFF";
-  const surfaceAlt = dark ? "#100E26" : "#F0EBE3";
-  const text       = dark ? "#F4F0FF" : "#1A1A2E";
-  const textMuted  = dark ? "#8880AA" : "#6B6588";
-  const burg       = "#2D1F6B";
+  const bg         = dark ? "#120720" : "#F4F1EE";
+  const surface    = dark ? "#1E0B3A" : "#FFFFFF";
+  const surfaceAlt = dark ? "#160830" : "#F0EBE3";
+  const text       = dark ? "#E8D8FF" : "#1A0A2E";
+  const textMuted  = dark ? "#9B85BB" : "#6B5F82";
+  const burg       = "#1E0B3A";
   const border     = dark ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.07)";
 
   /* ── Active section tracking ── */
