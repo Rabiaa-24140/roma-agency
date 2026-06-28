@@ -4,7 +4,22 @@ import { translations, Lang } from "@/lib/translations";
 import Navbar from "./Navbar";
 import Hero from "./Hero";
 import Services from "./Services";
-import { About, Portfolio, Process, Testimonials, Pricing, Contact, Footer } from "./Sections";
+import {
+  FeatureBento,
+  MarqueeBar,
+  TechEcosystem,
+  WhyRoma,
+  CTABlock,
+  About,
+  Portfolio,
+  Process,
+  Testimonials,
+  Pricing,
+  Contact,
+  Footer,
+} from "./Sections";
+
+const SECTIONS = ["home", "about", "services", "portfolio", "process", "pricing", "contact"];
 
 export default function RomaApp() {
   const [lang, setLang] = useState<Lang>("en");
@@ -15,27 +30,16 @@ export default function RomaApp() {
   const t = translations[lang];
   const isRTL = t.dir === "rtl";
 
-  // Color tokens
-  const bg = dark ? "#111111" : "#F7F3EE";
-  const surface = dark ? "#1A1A1A" : "#FFFFFF";
-  const surfaceAlt = dark ? "#161616" : "#F0EBE4";
-  const text = dark ? "#F5F5F5" : "#1B1B1B";
-  const textMuted = dark ? "#888888" : "#888888";
-  const burg = "#2D1F6B";
-  const border = dark ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.08)";
+  /* ── Color tokens ── */
+  const bg         = dark ? "#0D0B1F" : "#F4F1EE";
+  const surface    = dark ? "#161230" : "#FFFFFF";
+  const surfaceAlt = dark ? "#100E26" : "#F0EBE3";
+  const text       = dark ? "#F4F0FF" : "#1A1A2E";
+  const textMuted  = dark ? "#8880AA" : "#6B6588";
+  const burg       = "#2D1F6B";
+  const border     = dark ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.07)";
 
-  const SECTIONS = ["home", "about", "services", "portfolio", "process", "pricing", "contact"];
-
-  const navItems = [
-    { key: "home", label: t.nav.home },
-    { key: "about", label: t.nav.about },
-    { key: "services", label: t.nav.services },
-    { key: "portfolio", label: t.nav.portfolio },
-    { key: "process", label: t.nav.process },
-    { key: "pricing", label: t.nav.pricing },
-    { key: "contact", label: t.nav.contact },
-  ];
-
+  /* ── Active section tracking ── */
   useEffect(() => {
     const onScroll = () => {
       const scrollY = window.scrollY + 120;
@@ -55,13 +59,20 @@ export default function RomaApp() {
     setMenuOpen(false);
   };
 
-  const colors = { bg, surface, surfaceAlt, text, textMuted, burg, border };
+  const navItems = [
+    { key: "home",      label: t.nav.home },
+    { key: "about",     label: t.nav.about },
+    { key: "services",  label: t.nav.services },
+    { key: "portfolio", label: t.nav.portfolio },
+    { key: "pricing",   label: t.nav.pricing },
+    { key: "contact",   label: t.nav.contact },
+  ];
 
   return (
     <div
       style={{
         direction: t.dir,
-        fontFamily: "'Inter', 'Manrope', sans-serif",
+        fontFamily: "'Inter', sans-serif",
         background: bg,
         color: text,
         minHeight: "100vh",
@@ -69,7 +80,7 @@ export default function RomaApp() {
         transition: "background 0.4s, color 0.4s",
       }}
     >
-      {/* Navbar */}
+      {/* ── Floating Navbar ── */}
       <Navbar
         lang={lang}
         dark={dark}
@@ -83,14 +94,14 @@ export default function RomaApp() {
         colors={{ bg, text, textMuted, border, burg }}
       />
 
-      {/* Mobile Menu */}
+      {/* ── Full-screen mobile menu ── */}
       <div
         className="mobile-menu"
         style={{
-          position: "fixed", top: 70, left: 0, right: 0, bottom: 0, zIndex: 99,
-          background: dark ? "#111111" : "#F7F3EE",
+          position: "fixed", top: 0, left: 0, right: 0, bottom: 0, zIndex: 99,
+          background: dark ? "#0D0B1F" : "#F4F1EE",
           display: menuOpen ? "flex" : "none",
-          flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 40,
+          flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 36,
         }}
       >
         {navItems.map((n, i) => (
@@ -99,27 +110,117 @@ export default function RomaApp() {
             onClick={() => scrollTo(n.key)}
             style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: 36, fontWeight: 300, color: text,
-              background: "none", border: "none", letterSpacing: "0.05em",
-              opacity: 0.85, cursor: "pointer",
-              animation: menuOpen ? `fadeSlideUp 0.4s ease ${i * 0.06}s both` : "none",
+              fontSize: 40, fontWeight: 300, color: text,
+              background: "none", border: "none",
+              letterSpacing: "0.04em", cursor: "pointer",
+              opacity: 0.9,
+              animation: menuOpen ? `fadeSlideUp 0.4s ease ${i * 0.07}s both` : "none",
             }}
           >
             {n.label}
           </button>
         ))}
+        <button className="btn-primary" onClick={() => scrollTo("contact")}>
+          Start Project →
+        </button>
       </div>
 
-      {/* Sections */}
-      <Hero t={t.hero} isRTL={isRTL} textMuted={textMuted} burg={burg} onScrollToContact={() => scrollTo("contact")} onScrollToServices={() => scrollTo("services")} />
-      <Services t={t.services} surface={surface} surfaceAlt={surfaceAlt} textMuted={textMuted} border={border} burg={burg} text={text} />
-      <About t={t.about} text={text} textMuted={textMuted} border={border} burg={burg} />
-      <Portfolio t={t.portfolio} surfaceAlt={surfaceAlt} textMuted={textMuted} burg={burg} dark={dark} />
-      <Process t={t.process} textMuted={textMuted} border={border} burg={burg} />
+      {/* ── Sections ── */}
+      <Hero
+        t={t.hero}
+        isRTL={isRTL}
+        textMuted={textMuted}
+        burg={burg}
+        dark={dark}
+        onScrollToContact={() => scrollTo("contact")}
+        onScrollToServices={() => scrollTo("services")}
+      />
+
+      <FeatureBento
+        dark={dark} burg={burg} text={text}
+        textMuted={textMuted} border={border} surface={surface}
+      />
+
+      <MarqueeBar dark={dark} burg={burg} />
+
+      <Services
+        t={t.services}
+        surface={surface}
+        surfaceAlt={surfaceAlt}
+        textMuted={textMuted}
+        border={border}
+        burg={burg}
+        text={text}
+        dark={dark}
+      />
+
+      <About
+        t={t.about}
+        text={text} textMuted={textMuted}
+        border={border} burg={burg}
+        dark={dark} surface={surface}
+      />
+
+      <TechEcosystem
+        dark={dark} burg={burg} text={text}
+        textMuted={textMuted} border={border} surface={surface}
+      />
+
+      <Portfolio
+        t={t.portfolio}
+        textMuted={textMuted}
+        burg={burg}
+        dark={dark}
+        border={border}
+      />
+
+      <Process
+        t={t.process}
+        textMuted={textMuted}
+        border={border}
+        burg={burg}
+        dark={dark}
+      />
+
+      <WhyRoma
+        dark={dark} burg={burg} text={text}
+        textMuted={textMuted} border={border} surface={surface}
+      />
+
       <Testimonials t={t.testimonials} burg={burg} />
-      <Pricing t={t.pricing} surfaceAlt={surfaceAlt} surface={surface} text={text} textMuted={textMuted} border={border} burg={burg} isRTL={isRTL} onScrollToContact={() => scrollTo("contact")} />
-      <Contact t={t.contact} text={text} textMuted={textMuted} border={border} burg={burg} />
-      <Footer t={t.footer} lang={lang} onLangChange={setLang} navLabels={t.nav} />
+
+      <Pricing
+        t={t.pricing}
+        surface={surface}
+        text={text}
+        textMuted={textMuted}
+        border={border}
+        burg={burg}
+        isRTL={isRTL}
+        dark={dark}
+        onScrollToContact={() => scrollTo("contact")}
+      />
+
+      <CTABlock
+        dark={dark} burg={burg}
+        onScrollToContact={() => scrollTo("contact")}
+      />
+
+      <Contact
+        t={t.contact}
+        text={text} textMuted={textMuted}
+        border={border} burg={burg}
+        dark={dark}
+      />
+
+      <Footer
+        t={t.footer}
+        lang={lang}
+        onLangChange={setLang}
+        navLabels={t.nav}
+        burg={burg}
+        dark={dark}
+      />
     </div>
   );
 }
