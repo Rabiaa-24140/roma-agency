@@ -21,9 +21,9 @@ export default function Hero({
   t, isRTL, textMuted, burg, dark,
   onScrollToContact, onScrollToServices,
 }: HeroProps) {
-  const surface  = dark ? "#1A0808" : "#FFFFFF";
-  const card     = dark ? "#120505" : "#F0EBE3";
-  const textMain = dark ? "#F4F1EE" : "#1A0808";
+  const surface  = dark ? "#1E0B3A" : "#FFFFFF";
+  const card     = dark ? "#160830" : "#F0EBE3";
+  const textMain = dark ? "#E8D8FF" : "#1A0A2E";
   const border   = dark ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.07)";
 
   return (
@@ -159,7 +159,7 @@ export default function Hero({
           <div
             className="hero-visual-col bento-card bento-card-dark"
             style={{
-              background: "linear-gradient(155deg, #5A0606 0%, #2D0303 52%, #0D0505 100%)",
+              background: "linear-gradient(155deg, #2E1060 0%, #1E0B3A 52%, #0D0620 100%)",
               minHeight: 500,
               position: "relative",
               overflow: "hidden",
@@ -225,7 +225,7 @@ function OrbitalVisual({ burg }: { burg: string }) {
           position: "absolute",
           top: -110, left: -110,
           width: 220, height: 220, borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(162,39,39,0.42) 0%, rgba(90,6,6,0.12) 55%, transparent 100%)",
+          background: "radial-gradient(circle, rgba(93,50,180,0.42) 0%, rgba(45,16,96,0.12) 55%, transparent 100%)",
           animation: "pulseGlow 5.5s ease-in-out infinite",
         }} />
 
@@ -262,9 +262,9 @@ function OrbitalVisual({ burg }: { burg: string }) {
             <div style={{
               position: "absolute", top: -3, left: "50%",
               width: 6, height: 6, borderRadius: "50%",
-              background: "#A22727",
+              background: "#9B6DFF",
               transform: "translateX(-50%)",
-              boxShadow: "0 0 8px rgba(162,39,39,0.9)",
+              boxShadow: "0 0 8px rgba(155,109,255,0.9)",
             }} />
           </div>
         </div>
