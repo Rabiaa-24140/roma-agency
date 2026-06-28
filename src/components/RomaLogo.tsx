@@ -3,7 +3,7 @@ interface RomaLogoProps {
   size?: number;
 }
 
-export default function RomaLogo({ color = "#7A1E2C", size = 140 }: RomaLogoProps) {
+export default function RomaLogo({ color = "#2D1F6B", size = 140 }: RomaLogoProps) {
   // 4-pointed sparkle star centered on the O (cx=97, cy=52)
   const sparkle = "M 97,46 L 98.2,50.8 L 103,52 L 98.2,53.2 L 97,58 L 95.8,53.2 L 91,52 L 95.8,50.8 Z";
 

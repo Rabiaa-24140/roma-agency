@@ -12,7 +12,7 @@ html {
 
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #7A1E2C; border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: #2D1F6B; border-radius: 2px; }
 
 button { cursor: pointer; border: none; background: none; }
 input, textarea, select { outline: none; }
@@ -30,7 +30,7 @@ a { text-decoration: none; color: inherit; }
 
 /* ── BUTTONS ── */
 .roma-btn-primary {
-  background: #7A1E2C;
+  background: #2D1F6B;
   color: #F7F3EE;
   padding: 14px 32px;
   font-family: 'Inter', sans-serif;
@@ -38,12 +38,12 @@ a { text-decoration: none; color: inherit; }
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  border: 1px solid #7A1E2C;
+  border: 1px solid #2D1F6B;
   transition: all 0.3s ease;
   display: inline-block;
   cursor: pointer;
 }
-.roma-btn-primary:hover { background: #8F2333; border-color: #8F2333; }
+.roma-btn-primary:hover { background: #3D2F8B; border-color: #3D2F8B; }
 
 .roma-btn-ghost {
   background: transparent;
@@ -72,10 +72,10 @@ a { text-decoration: none; color: inherit; }
   cursor: pointer;
   opacity: 0.5;
 }
-.nav-link:hover, .nav-link.active { opacity: 1; color: #7A1E2C; }
+.nav-link:hover, .nav-link.active { opacity: 1; color: #2D1F6B; }
 
 /* ── CARDS ── */
-.service-card:hover { border-color: #7A1E2C !important; }
+.service-card:hover { border-color: #2D1F6B !important; }
 .portfolio-card:hover .portfolio-overlay { opacity: 1 !important; }
 .pricing-card:hover { transform: translateY(-4px); }
 

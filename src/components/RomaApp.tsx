@@ -21,7 +21,7 @@ export default function RomaApp() {
   const surfaceAlt = dark ? "#161616" : "#F0EBE4";
   const text = dark ? "#F5F5F5" : "#1B1B1B";
   const textMuted = dark ? "#888888" : "#888888";
-  const burg = "#7A1E2C";
+  const burg = "#2D1F6B";
   const border = dark ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.08)";
 
   const SECTIONS = ["home", "about", "services", "portfolio", "process", "pricing", "contact"];
