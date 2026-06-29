@@ -223,8 +223,9 @@ a { text-decoration: none; color: inherit; }
 @media (max-width: 900px) {
   .nav-desktop     { display: none !important; }
   .mobile-menu-btn { display: flex !important; }
+  .hero-split      { grid-template-columns: 1fr !important; }
   .hero-bento      { grid-template-columns: 1fr !important; }
-  .hero-visual-col { display: none !important; }
+  .hero-visual-col { min-height: 320px !important; }
   .hero-stats-row  { grid-template-columns: 1fr 1fr !important; }
   .features-grid   { grid-template-columns: 1fr !important; }
   .services-bento  { grid-template-columns: 1fr 1fr !important; }

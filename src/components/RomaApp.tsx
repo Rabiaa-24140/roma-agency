@@ -31,7 +31,7 @@ export default function RomaApp() {
   const isRTL = t.dir === "rtl";
 
   /* ── Color tokens ── */
-  const bg         = dark ? "#0C0818" : "#FAFAFA";
+  const bg         = dark ? "#0C0818" : "#FAF8F5";
   const surface    = dark ? "#130E24" : "#FFFFFF";
   const surfaceAlt = dark ? "#0F0A1E" : "#F5F0FF";
   const text       = dark ? "#F5F0FF" : "#1A0A2E";
