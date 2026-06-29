@@ -452,29 +452,8 @@ export function CTABlock({ onScrollToContact }: any) {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   TEAM — text-only, no photos
+   TEAM — collective manifesto, no names, no photos
 ───────────────────────────────────────────────────────────────────────────── */
-const TEAM_MEMBERS = [
-  {
-    num: "01",
-    name: "Rabia Elbekay",
-    role: "Creative Direction & Brand",
-    desc: "Visionary founder who shapes every project's identity, strategy, and creative soul.",
-  },
-  {
-    num: "02",
-    name: "Safa Mansour",
-    role: "Design & Development",
-    desc: "Bridges beautiful interfaces with clean, performant code — pixel-perfect and purposeful.",
-  },
-  {
-    num: "03",
-    name: "Yasmine Khalil",
-    role: "Strategy & Growth",
-    desc: "Turns insights into action — driving results through sharp thinking and relentless execution.",
-  },
-];
-
 export function Team({ burg, dark }: any) {
   const headColor = dark ? "#F5F0FF" : "#1A0A2E";
   const bg = dark ? "#0F0A1E" : "#F5F0FF";
@@ -482,101 +461,68 @@ export function Team({ burg, dark }: any) {
   const textMuted = dark ? "#9985BB" : "#6B5F82";
 
   return (
-    <section style={{ padding: "100px 24px", background: bg }}>
-      <div style={{ maxWidth: 1160, margin: "0 auto" }}>
+    <section style={{ padding: "120px 24px", background: bg }}>
+      <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
 
-        {/* Header */}
         <Fade>
-          <div style={{ textAlign: "center", marginBottom: 80 }}>
-            <p style={{
-              fontSize: 11, letterSpacing: "0.28em", textTransform: "uppercase",
-              color: burg, marginBottom: 20, fontWeight: 500, fontFamily: "'Inter', sans-serif",
-            }}>
-              The Women Behind ROMA
-            </p>
-            <h2 style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(36px, 4.5vw, 72px)",
-              fontWeight: 300, lineHeight: 1.06, letterSpacing: "-0.025em",
-              color: headColor, marginBottom: 24,
-            }}>
-              Three Women. One Vision.
-            </h2>
-            <p style={{
-              fontSize: 16, color: textMuted, fontWeight: 300, lineHeight: 1.8,
-              maxWidth: 520, margin: "0 auto",
-            }}>
-              We do everything together — strategy, design, code, and delivery.
-              Every project carries all three of us in it.
-            </p>
-          </div>
+          <p style={{
+            fontSize: 11, letterSpacing: "0.28em", textTransform: "uppercase",
+            color: burg, marginBottom: 32, fontWeight: 500, fontFamily: "'Inter', sans-serif",
+          }}>
+            Who We Are
+          </p>
+
+          <h2 style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "clamp(38px, 5vw, 80px)",
+            fontWeight: 300, lineHeight: 1.06, letterSpacing: "-0.025em",
+            color: headColor, marginBottom: 48,
+          }}>
+            Three Women.<br />One Dream.
+          </h2>
         </Fade>
 
-        {/* Member cards */}
-        <div
-          className="portfolio-grid"
-          style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }}
-        >
-          {TEAM_MEMBERS.map((m, i) => (
-            <Fade key={i} delay={i * 0.1}>
-              <div style={{
-                padding: "48px 40px",
-                borderTop: `2px solid ${i === 0 ? burg : border}`,
-                borderRight: i < 2 ? `1px solid ${border}` : "none",
-                position: "relative",
-              }}>
-                {/* Large faint number */}
-                <p style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: 80, fontWeight: 300, lineHeight: 1,
-                  color: burg, opacity: 0.12,
-                  position: "absolute", top: 20, right: 32,
-                  userSelect: "none",
-                }}>{m.num}</p>
+        <Fade delay={0.15}>
+          <div style={{ width: 48, height: 2, background: burg, margin: "0 auto 48px" }} />
 
+          <p style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "clamp(19px, 2.2vw, 26px)",
+            fontWeight: 300, fontStyle: "italic", lineHeight: 1.75,
+            color: headColor, marginBottom: 40, letterSpacing: "0.005em",
+          }}>
+            "We started ROMA with a single belief — that great digital work
+            is born from passion, not just process. We are three women
+            who build everything together: strategy, design, code, and vision.
+            No handoffs. No silos. Just three minds fully invested
+            in every project we touch."
+          </p>
+
+          <p style={{
+            fontSize: 15, lineHeight: 1.9, fontWeight: 300,
+            color: textMuted, maxWidth: 620, margin: "0 auto 56px",
+          }}>
+            We dream of a world where ambitious ideas — no matter how bold —
+            get the exceptional execution they deserve. Every client we work
+            with becomes part of that dream. We don't just deliver projects.
+            We build futures.
+          </p>
+        </Fade>
+
+        <Fade delay={0.25}>
+          <div style={{
+            display: "flex", justifyContent: "center", gap: 48, flexWrap: "wrap",
+            paddingTop: 48, borderTop: `1px solid ${border}`,
+          }}>
+            {["Strategy", "Design", "Development"].map((label, i) => (
+              <div key={i} style={{ textAlign: "center" }}>
+                <div style={{ width: 6, height: 6, borderRadius: "50%", background: burg, margin: "0 auto 14px" }} />
                 <p style={{
                   fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase",
-                  color: burg, marginBottom: 20, fontFamily: "'Inter', sans-serif", fontWeight: 500,
-                }}>{m.num}</p>
-
-                <h3 style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: 30, fontWeight: 400, lineHeight: 1.1,
-                  color: headColor, marginBottom: 8,
-                  letterSpacing: "-0.01em",
-                }}>{m.name}</h3>
-
-                <p style={{
-                  fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase",
-                  color: burg, marginBottom: 24, fontFamily: "'Inter', sans-serif",
-                }}>{m.role}</p>
-
-                <div style={{ width: 32, height: 1, background: burg, opacity: 0.4, marginBottom: 24 }} />
-
-                <p style={{
-                  fontSize: 14.5, color: textMuted, lineHeight: 1.8, fontWeight: 300,
-                }}>{m.desc}</p>
+                  color: textMuted, fontFamily: "'Inter', sans-serif", fontWeight: 500,
+                }}>{label}</p>
               </div>
-            </Fade>
-          ))}
-        </div>
-
-        {/* Bottom tagline */}
-        <Fade delay={0.4}>
-          <div style={{
-            marginTop: 64, paddingTop: 48,
-            borderTop: `1px solid ${border}`,
-            textAlign: "center",
-          }}>
-            <p style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(18px, 2.2vw, 28px)",
-              fontWeight: 300, fontStyle: "italic",
-              color: dark ? "rgba(245,240,255,0.55)" : "rgba(26,10,46,0.4)",
-              letterSpacing: "0.01em",
-            }}>
-              "Whatever you need — we're all in."
-            </p>
+            ))}
           </div>
         </Fade>
       </div>
