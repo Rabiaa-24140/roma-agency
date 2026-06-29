@@ -5,14 +5,11 @@ import Navbar from "./Navbar";
 import Hero from "./Hero";
 import Services from "./Services";
 import {
-  FeatureBento,
   MarqueeBar,
-  TechEcosystem,
-  WhyRoma,
   CTABlock,
   About,
   Portfolio,
-  Process,
+  Team,
   Testimonials,
   Pricing,
   Contact,
@@ -136,12 +133,14 @@ export default function RomaApp() {
         onScrollToServices={() => scrollTo("services")}
       />
 
-      <FeatureBento
-        dark={dark} burg={burg} text={text}
-        textMuted={textMuted} border={border} surface={surface}
+      <About
+        t={t.about}
+        text={text} textMuted={textMuted}
+        border={border} burg={burg}
+        dark={dark}
       />
 
-      <MarqueeBar dark={dark} burg={burg} />
+      <MarqueeBar burg={burg} />
 
       <Services
         t={t.services}
@@ -154,17 +153,7 @@ export default function RomaApp() {
         dark={dark}
       />
 
-      <About
-        t={t.about}
-        text={text} textMuted={textMuted}
-        border={border} burg={burg}
-        dark={dark} surface={surface}
-      />
-
-      <TechEcosystem
-        dark={dark} burg={burg} text={text}
-        textMuted={textMuted} border={border} surface={surface}
-      />
+      <Team burg={burg} dark={dark} border={border} />
 
       <Portfolio
         t={t.portfolio}
@@ -172,19 +161,6 @@ export default function RomaApp() {
         burg={burg}
         dark={dark}
         border={border}
-      />
-
-      <Process
-        t={t.process}
-        textMuted={textMuted}
-        border={border}
-        burg={burg}
-        dark={dark}
-      />
-
-      <WhyRoma
-        dark={dark} burg={burg} text={text}
-        textMuted={textMuted} border={border} surface={surface}
       />
 
       <Testimonials t={t.testimonials} burg={burg} />
@@ -201,10 +177,7 @@ export default function RomaApp() {
         onScrollToContact={() => scrollTo("contact")}
       />
 
-      <CTABlock
-        dark={dark} burg={burg}
-        onScrollToContact={() => scrollTo("contact")}
-      />
+      <CTABlock onScrollToContact={() => scrollTo("contact")} />
 
       <Contact
         t={t.contact}

@@ -85,43 +85,38 @@ export function FeatureBento({ dark, burg, text, textMuted, border, surface }: a
 /* ─────────────────────────────────────────────────────────────────────────────
    MARQUEE BAR  — scrolling trust strip
 ───────────────────────────────────────────────────────────────────────────── */
-export function MarqueeBar({ dark, burg }: any) {
-  const bg = dark ? "#0F0A1E" : "#1A0A2E";
-  const items = [
-    "Website Development", "Mobile Applications", "UI/UX Design",
-    "Brand Identity", "AI Solutions", "Automation", "Custom Software",
-    "E-commerce", "Digital Strategy", "Website Development", "Mobile Applications",
-    "UI/UX Design", "Brand Identity", "AI Solutions", "Automation",
-    "Custom Software", "E-commerce", "Digital Strategy",
+export function MarqueeBar({ burg }: any) {
+  const stats = [
+    { n: "680",   label: "Clients Trust Us"   },
+    { n: "1,354", label: "Projects Completed" },
+    { n: "97%",   label: "Success Rate"       },
+    { n: "15Y",   label: "Of Experience"      },
   ];
-
   return (
-    <div style={{ background: bg, padding: "20px 0", overflow: "hidden" }}>
-      <div className="marquee-track">
-        <div className="marquee-inner">
-          {items.map((item, i) => (
-            <div
-              key={i}
-              style={{
-                display: "flex", alignItems: "center", gap: 0,
-                paddingRight: 56, flexShrink: 0,
-              }}
-            >
-              <span style={{
-                fontSize: 13, fontWeight: 400, letterSpacing: "0.05em",
-                textTransform: "uppercase", color: "rgba(244,241,238,0.55)",
+    <div style={{ background: burg, padding: "56px 24px" }}>
+      <div style={{
+        maxWidth: 1160, margin: "0 auto",
+        display: "grid", gridTemplateColumns: "repeat(4,1fr)",
+      }}>
+        {stats.map((s, i) => (
+          <Fade key={i} delay={i * 0.08}>
+            <div style={{
+              textAlign: "center", padding: "0 20px",
+              borderRight: i < 3 ? "1px solid rgba(255,255,255,0.18)" : "none",
+            }}>
+              <p style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(40px, 4vw, 64px)", fontWeight: 300,
+                color: "#FFFFFF", lineHeight: 1, marginBottom: 10,
+              }}>{s.n}</p>
+              <p style={{
+                fontSize: 11, color: "rgba(255,255,255,0.65)",
+                letterSpacing: "0.14em", textTransform: "uppercase",
                 fontFamily: "'Inter', sans-serif",
-                whiteSpace: "nowrap",
-              }}>
-                {item}
-              </span>
-              <span style={{
-                marginLeft: 56, width: 4, height: 4, borderRadius: "50%",
-                background: burg, flexShrink: 0, opacity: 0.8,
-              }} />
+              }}>{s.label}</p>
             </div>
-          ))}
-        </div>
+          </Fade>
+        ))}
       </div>
     </div>
   );
@@ -404,76 +399,51 @@ export function WhyRoma({ dark, burg, text, textMuted, border, surface }: any) {
 /* ─────────────────────────────────────────────────────────────────────────────
    CTA BLOCK  — full-width gradient call to action
 ───────────────────────────────────────────────────────────────────────────── */
-export function CTABlock({ dark, burg, onScrollToContact }: any) {
-  return (
-    <section style={{ padding: "0 24px 100px" }}>
-      <div style={{ maxWidth: 1160, margin: "0 auto" }}>
-        <Fade>
-          <div
-            className="bento-card bento-card-dark"
-            style={{
-              background: "linear-gradient(135deg, #7851A9 0%, #5A3A8C 55%, #2D1A5E 100%)",
-              backgroundSize: "200% 200%",
-              animation: "gradientFlow 8s ease infinite",
-              padding: "80px 72px",
-              textAlign: "center",
-              position: "relative",
-              overflow: "hidden",
-            }}
-          >
-            {/* Decorative rings */}
-            <div style={{
-              position: "absolute", top: "50%", left: "50%",
-              width: 500, height: 500, borderRadius: "50%",
-              border: "1px solid rgba(244,241,238,0.05)",
-              transform: "translate(-50%,-50%)",
-              pointerEvents: "none",
-            }} />
-            <div style={{
-              position: "absolute", top: "50%", left: "50%",
-              width: 700, height: 700, borderRadius: "50%",
-              border: "1px solid rgba(244,241,238,0.03)",
-              transform: "translate(-50%,-50%)",
-              pointerEvents: "none",
-            }} />
+const CTA_IMG = "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1600&q=80";
 
-            <p style={{
-              fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase",
-              color: "rgba(244,241,238,0.5)", marginBottom: 24,
-              fontFamily: "'Inter', sans-serif", fontWeight: 500,
-            }}>
-              Ready to Begin
-            </p>
-            <h2 style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(38px, 5vw, 76px)",
-              fontWeight: 300, lineHeight: 1.06,
-              letterSpacing: "-0.025em",
-              color: "#F4F1EE",
-              marginBottom: 28, maxWidth: 680, margin: "0 auto 28px",
-            }}>
-              Let's Build Something Extraordinary Together
-            </h2>
-            <p style={{
-              fontSize: 16, color: "rgba(244,241,238,0.62)",
-              maxWidth: 480, margin: "0 auto 48px",
-              lineHeight: 1.8, fontWeight: 300,
-            }}>
-              Your vision deserves exceptional execution. Tell us where you want to go.
-            </p>
-            <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-              <button className="btn-ghost-inv" onClick={onScrollToContact}
-                style={{
-                  background: "#F5F0FF", color: "#1A0A2E",
-                  border: "none", fontWeight: 500,
-                }}
-              >
-                Start Your Project →
-              </button>
-              <button className="btn-ghost-inv" onClick={onScrollToContact}>
-                Schedule a Call
-              </button>
-            </div>
+export function CTABlock({ onScrollToContact }: any) {
+  return (
+    <section style={{
+      position: "relative", overflow: "hidden",
+      backgroundImage: `url('${CTA_IMG}')`,
+      backgroundSize: "cover", backgroundPosition: "center",
+      padding: "120px 24px",
+    }}>
+      {/* Dark purple overlay */}
+      <div style={{
+        position: "absolute", inset: 0,
+        background: "linear-gradient(120deg, rgba(30,8,80,0.92) 0%, rgba(60,20,110,0.85) 100%)",
+      }} />
+      <div style={{ position: "relative", zIndex: 1, maxWidth: 1160, margin: "0 auto" }}>
+        <Fade>
+          <p style={{
+            fontSize: 11, letterSpacing: "0.28em", textTransform: "uppercase",
+            color: "rgba(255,255,255,0.55)", marginBottom: 20,
+            fontFamily: "'Inter', sans-serif", fontWeight: 500,
+          }}>
+            Ready to Begin
+          </p>
+          <h2 style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "clamp(38px, 5vw, 80px)",
+            fontWeight: 300, lineHeight: 1.06, letterSpacing: "-0.025em",
+            color: "#FFFFFF", maxWidth: 700, marginBottom: 24,
+          }}>
+            Let's Discuss Your Business Goals & Schedule a Free Consultation Today
+          </h2>
+          <p style={{
+            fontSize: 16, color: "rgba(255,255,255,0.60)",
+            maxWidth: 500, marginBottom: 48, lineHeight: 1.8, fontWeight: 300,
+          }}>
+            Your vision deserves exceptional execution. Tell us where you want to go.
+          </p>
+          <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+            <button className="btn-primary" onClick={onScrollToContact}>
+              Start Your Project →
+            </button>
+            <button className="btn-ghost-inv" onClick={onScrollToContact}>
+              Schedule a Call
+            </button>
           </div>
         </Fade>
       </div>
@@ -482,93 +452,171 @@ export function CTABlock({ dark, burg, onScrollToContact }: any) {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   ABOUT
+   TEAM
 ───────────────────────────────────────────────────────────────────────────── */
-export function About({ t, text, textMuted, border, burg, dark, surface }: any) {
+const TEAM = [
+  {
+    name: "Rabia Elbekay",
+    role: "Founder & Creative Director",
+    img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80",
+  },
+  {
+    name: "Adam Farouk",
+    role: "Lead Developer",
+    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
+  },
+  {
+    name: "Lena Moreau",
+    role: "UI/UX Design Lead",
+    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=600&q=80",
+  },
+];
+
+export function Team({ burg, dark, border }: any) {
+  const headColor = dark ? "#F5F0FF" : "#1A0A2E";
   return (
-    <section id="about" style={{ padding: "100px 24px" }}>
+    <section style={{ padding: "100px 24px", background: dark ? "#0F0A1E" : "#F5F0FF" }}>
       <div style={{ maxWidth: 1160, margin: "0 auto" }}>
         <Fade>
           <p style={{
-            fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase",
-            color: burg, marginBottom: 20, fontWeight: 500,
-            fontFamily: "'Inter', sans-serif",
+            fontSize: 11, letterSpacing: "0.28em", textTransform: "uppercase",
+            color: burg, marginBottom: 16, fontWeight: 500, fontFamily: "'Inter', sans-serif",
+          }}>Our Team</p>
+          <h2 style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "clamp(36px, 4.5vw, 68px)",
+            fontWeight: 300, lineHeight: 1.08, letterSpacing: "-0.022em",
+            color: headColor, marginBottom: 64, maxWidth: 540,
           }}>
-            {t.label}
-          </p>
+            Discover Our Head Expert Consultants
+          </h2>
         </Fade>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 28 }} className="portfolio-grid">
+          {TEAM.map((m, i) => (
+            <Fade key={i} delay={i * 0.1}>
+              <div style={{ borderRadius: 4, overflow: "hidden", position: "relative", cursor: "pointer" }}>
+                <img
+                  src={m.img}
+                  alt={m.name}
+                  style={{ width: "100%", height: 380, objectFit: "cover", display: "block", transition: "transform 0.5s ease" }}
+                  onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.04)")}
+                  onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}
+                />
+                <div style={{
+                  background: burg,
+                  padding: "20px 24px",
+                }}>
+                  <p style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: 22, fontWeight: 400, color: "#FFFFFF", marginBottom: 4,
+                  }}>{m.name}</p>
+                  <p style={{
+                    fontSize: 11, color: "rgba(255,255,255,0.65)",
+                    letterSpacing: "0.1em", textTransform: "uppercase",
+                    fontFamily: "'Inter', sans-serif",
+                  }}>{m.role}</p>
+                </div>
+              </div>
+            </Fade>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
-        <div
-          className="about-grid"
-          style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start" }}
-        >
-          <Fade delay={0.1}>
-            <h2 style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(36px, 4.2vw, 64px)",
-              fontWeight: 300, lineHeight: 1.1,
-              letterSpacing: "-0.022em",
-              color: dark ? "#F5F0FF" : "#1A0A2E",
-            }}>
-              {t.headline}
-            </h2>
+/* ─────────────────────────────────────────────────────────────────────────────
+   ABOUT
+───────────────────────────────────────────────────────────────────────────── */
+const ABOUT_IMG = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80";
+
+export function About({ t, text, textMuted, border, burg, dark }: any) {
+  const headColor = dark ? "#F5F0FF" : "#1A0A2E";
+
+  return (
+    <section id="about" style={{ padding: "100px 24px", background: dark ? "#0C0818" : "#FFFFFF" }}>
+      <div style={{ maxWidth: 1160, margin: "0 auto" }}>
+        <div className="about-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+
+          {/* Left — photo with stats badge */}
+          <Fade delay={0.05}>
+            <div style={{ position: "relative" }}>
+              <img
+                src={ABOUT_IMG}
+                alt="ROMA Team"
+                style={{ width: "100%", height: 520, objectFit: "cover", display: "block", borderRadius: 4 }}
+              />
+              {/* Purple stats badge */}
+              <div style={{
+                position: "absolute", bottom: -24, right: -24,
+                background: burg, color: "#FFFFFF",
+                padding: "28px 36px", borderRadius: 4,
+                boxShadow: "0 20px 60px rgba(120,81,169,0.35)",
+              }}>
+                <p style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: 52, fontWeight: 300, lineHeight: 1, marginBottom: 6,
+                }}>100+</p>
+                <p style={{ fontSize: 11, letterSpacing: "0.15em", textTransform: "uppercase", opacity: 0.8 }}>
+                  Clients Trust Us
+                </p>
+              </div>
+            </div>
           </Fade>
 
-          <div>
-            <Fade delay={0.2}>
+          {/* Right — content */}
+          <div style={{ paddingBottom: 24 }}>
+            <Fade delay={0.1}>
+              <p style={{
+                fontSize: 11, letterSpacing: "0.28em", textTransform: "uppercase",
+                color: burg, marginBottom: 20, fontWeight: 500, fontFamily: "'Inter', sans-serif",
+              }}>
+                {t.label}
+              </p>
+              <h2 style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(34px, 4vw, 60px)",
+                fontWeight: 300, lineHeight: 1.1,
+                letterSpacing: "-0.02em",
+                color: headColor, marginBottom: 28,
+              }}>
+                {t.headline}
+              </h2>
               <p style={{
                 fontSize: 16, lineHeight: 1.88, fontWeight: 300,
-                color: textMuted, marginBottom: 48,
+                color: textMuted, marginBottom: 40,
               }}>
                 {t.body}
               </p>
             </Fade>
 
-            <Fade delay={0.28}>
-              <div style={{ marginBottom: 36 }}>
-                <p style={{
-                  fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase",
-                  color: burg, marginBottom: 12, fontWeight: 500,
-                  fontFamily: "'Inter', sans-serif",
-                }}>
-                  Mission
-                </p>
-                <p style={{ fontSize: 15, lineHeight: 1.75, fontWeight: 300, color: text }}>
-                  {t.mission}
-                </p>
-              </div>
-            </Fade>
-
-            <Fade delay={0.34}>
-              <div style={{ marginBottom: 44 }}>
-                <p style={{
-                  fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase",
-                  color: burg, marginBottom: 12, fontWeight: 500,
-                  fontFamily: "'Inter', sans-serif",
-                }}>
-                  Vision
-                </p>
-                <p style={{ fontSize: 15, lineHeight: 1.75, fontWeight: 300, color: text }}>
-                  {t.vision}
-                </p>
-              </div>
-            </Fade>
-
-            <Fade delay={0.4}>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                {t.values.map((v: string, i: number) => (
-                  <span key={i} style={{
-                    border: `1px solid ${border}`,
-                    padding: "8px 18px", fontSize: 12,
-                    letterSpacing: "0.08em", textTransform: "uppercase",
-                    fontWeight: 500, color: burg,
-                    borderRadius: 100,
-                    fontFamily: "'Inter', sans-serif",
-                  }}>
-                    {v}
-                  </span>
+            {/* Key points */}
+            <Fade delay={0.2}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 20, marginBottom: 44 }}>
+                {[
+                  { icon: "◈", text: t.mission },
+                  { icon: "◇", text: t.vision  },
+                ].map((item, i) => (
+                  <div key={i} style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
+                    <div style={{
+                      width: 40, height: 40, borderRadius: "50%",
+                      background: dark ? "rgba(120,81,169,0.15)" : "rgba(120,81,169,0.08)",
+                      border: `1px solid ${border}`,
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      color: burg, fontSize: 14, flexShrink: 0,
+                    }}>{item.icon}</div>
+                    <p style={{ fontSize: 14.5, lineHeight: 1.75, fontWeight: 300, color: text, paddingTop: 8 }}>
+                      {item.text}
+                    </p>
+                  </div>
                 ))}
               </div>
+            </Fade>
+
+            <Fade delay={0.3}>
+              <button className="btn-primary">
+                Discover More →
+              </button>
             </Fade>
           </div>
         </div>
