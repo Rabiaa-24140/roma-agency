@@ -399,7 +399,7 @@ export function WhyRoma({ dark, burg, text, textMuted, border, surface }: any) {
 /* ─────────────────────────────────────────────────────────────────────────────
    CTA BLOCK  — full-width gradient call to action
 ───────────────────────────────────────────────────────────────────────────── */
-const CTA_IMG = "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1600&q=80";
+const CTA_IMG = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80";
 
 export function CTABlock({ onScrollToContact }: any) {
   return (
@@ -452,74 +452,133 @@ export function CTABlock({ onScrollToContact }: any) {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   TEAM
+   TEAM — text-only, no photos
 ───────────────────────────────────────────────────────────────────────────── */
-const TEAM = [
+const TEAM_MEMBERS = [
   {
+    num: "01",
     name: "Rabia Elbekay",
-    role: "Founder & Creative Director",
-    img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80",
+    role: "Creative Direction & Brand",
+    desc: "Visionary founder who shapes every project's identity, strategy, and creative soul.",
   },
   {
-    name: "Adam Farouk",
-    role: "Lead Developer",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
+    num: "02",
+    name: "Safa Mansour",
+    role: "Design & Development",
+    desc: "Bridges beautiful interfaces with clean, performant code — pixel-perfect and purposeful.",
   },
   {
-    name: "Lena Moreau",
-    role: "UI/UX Design Lead",
-    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=600&q=80",
+    num: "03",
+    name: "Yasmine Khalil",
+    role: "Strategy & Growth",
+    desc: "Turns insights into action — driving results through sharp thinking and relentless execution.",
   },
 ];
 
-export function Team({ burg, dark, border }: any) {
+export function Team({ burg, dark }: any) {
   const headColor = dark ? "#F5F0FF" : "#1A0A2E";
+  const bg = dark ? "#0F0A1E" : "#F5F0FF";
+  const border = dark ? "rgba(255,255,255,0.07)" : "rgba(120,81,169,0.12)";
+  const textMuted = dark ? "#9985BB" : "#6B5F82";
+
   return (
-    <section style={{ padding: "100px 24px", background: dark ? "#0F0A1E" : "#F5F0FF" }}>
+    <section style={{ padding: "100px 24px", background: bg }}>
       <div style={{ maxWidth: 1160, margin: "0 auto" }}>
+
+        {/* Header */}
         <Fade>
-          <p style={{
-            fontSize: 11, letterSpacing: "0.28em", textTransform: "uppercase",
-            color: burg, marginBottom: 16, fontWeight: 500, fontFamily: "'Inter', sans-serif",
-          }}>Our Team</p>
-          <h2 style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(36px, 4.5vw, 68px)",
-            fontWeight: 300, lineHeight: 1.08, letterSpacing: "-0.022em",
-            color: headColor, marginBottom: 64, maxWidth: 540,
-          }}>
-            Discover Our Head Expert Consultants
-          </h2>
+          <div style={{ textAlign: "center", marginBottom: 80 }}>
+            <p style={{
+              fontSize: 11, letterSpacing: "0.28em", textTransform: "uppercase",
+              color: burg, marginBottom: 20, fontWeight: 500, fontFamily: "'Inter', sans-serif",
+            }}>
+              The Women Behind ROMA
+            </p>
+            <h2 style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(36px, 4.5vw, 72px)",
+              fontWeight: 300, lineHeight: 1.06, letterSpacing: "-0.025em",
+              color: headColor, marginBottom: 24,
+            }}>
+              Three Women. One Vision.
+            </h2>
+            <p style={{
+              fontSize: 16, color: textMuted, fontWeight: 300, lineHeight: 1.8,
+              maxWidth: 520, margin: "0 auto",
+            }}>
+              We do everything together — strategy, design, code, and delivery.
+              Every project carries all three of us in it.
+            </p>
+          </div>
         </Fade>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 28 }} className="portfolio-grid">
-          {TEAM.map((m, i) => (
+
+        {/* Member cards */}
+        <div
+          className="portfolio-grid"
+          style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }}
+        >
+          {TEAM_MEMBERS.map((m, i) => (
             <Fade key={i} delay={i * 0.1}>
-              <div style={{ borderRadius: 4, overflow: "hidden", position: "relative", cursor: "pointer" }}>
-                <img
-                  src={m.img}
-                  alt={m.name}
-                  style={{ width: "100%", height: 380, objectFit: "cover", display: "block", transition: "transform 0.5s ease" }}
-                  onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.04)")}
-                  onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}
-                />
-                <div style={{
-                  background: burg,
-                  padding: "20px 24px",
-                }}>
-                  <p style={{
-                    fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: 22, fontWeight: 400, color: "#FFFFFF", marginBottom: 4,
-                  }}>{m.name}</p>
-                  <p style={{
-                    fontSize: 11, color: "rgba(255,255,255,0.65)",
-                    letterSpacing: "0.1em", textTransform: "uppercase",
-                    fontFamily: "'Inter', sans-serif",
-                  }}>{m.role}</p>
-                </div>
+              <div style={{
+                padding: "48px 40px",
+                borderTop: `2px solid ${i === 0 ? burg : border}`,
+                borderRight: i < 2 ? `1px solid ${border}` : "none",
+                position: "relative",
+              }}>
+                {/* Large faint number */}
+                <p style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: 80, fontWeight: 300, lineHeight: 1,
+                  color: burg, opacity: 0.12,
+                  position: "absolute", top: 20, right: 32,
+                  userSelect: "none",
+                }}>{m.num}</p>
+
+                <p style={{
+                  fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase",
+                  color: burg, marginBottom: 20, fontFamily: "'Inter', sans-serif", fontWeight: 500,
+                }}>{m.num}</p>
+
+                <h3 style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: 30, fontWeight: 400, lineHeight: 1.1,
+                  color: headColor, marginBottom: 8,
+                  letterSpacing: "-0.01em",
+                }}>{m.name}</h3>
+
+                <p style={{
+                  fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase",
+                  color: burg, marginBottom: 24, fontFamily: "'Inter', sans-serif",
+                }}>{m.role}</p>
+
+                <div style={{ width: 32, height: 1, background: burg, opacity: 0.4, marginBottom: 24 }} />
+
+                <p style={{
+                  fontSize: 14.5, color: textMuted, lineHeight: 1.8, fontWeight: 300,
+                }}>{m.desc}</p>
               </div>
             </Fade>
           ))}
         </div>
+
+        {/* Bottom tagline */}
+        <Fade delay={0.4}>
+          <div style={{
+            marginTop: 64, paddingTop: 48,
+            borderTop: `1px solid ${border}`,
+            textAlign: "center",
+          }}>
+            <p style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(18px, 2.2vw, 28px)",
+              fontWeight: 300, fontStyle: "italic",
+              color: dark ? "rgba(245,240,255,0.55)" : "rgba(26,10,46,0.4)",
+              letterSpacing: "0.01em",
+            }}>
+              "Whatever you need — we're all in."
+            </p>
+          </div>
+        </Fade>
       </div>
     </section>
   );
@@ -528,98 +587,69 @@ export function Team({ burg, dark, border }: any) {
 /* ─────────────────────────────────────────────────────────────────────────────
    ABOUT
 ───────────────────────────────────────────────────────────────────────────── */
-const ABOUT_IMG = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80";
-
 export function About({ t, text, textMuted, border, burg, dark }: any) {
   const headColor = dark ? "#F5F0FF" : "#1A0A2E";
 
   return (
     <section id="about" style={{ padding: "100px 24px", background: dark ? "#0C0818" : "#FFFFFF" }}>
       <div style={{ maxWidth: 1160, margin: "0 auto" }}>
-        <div className="about-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
 
-          {/* Left — photo with stats badge */}
-          <Fade delay={0.05}>
-            <div style={{ position: "relative" }}>
-              <img
-                src={ABOUT_IMG}
-                alt="ROMA Team"
-                style={{ width: "100%", height: 520, objectFit: "cover", display: "block", borderRadius: 4 }}
-              />
-              {/* Purple stats badge */}
-              <div style={{
-                position: "absolute", bottom: -24, right: -24,
-                background: burg, color: "#FFFFFF",
-                padding: "28px 36px", borderRadius: 4,
-                boxShadow: "0 20px 60px rgba(120,81,169,0.35)",
-              }}>
-                <p style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: 52, fontWeight: 300, lineHeight: 1, marginBottom: 6,
-                }}>100+</p>
-                <p style={{ fontSize: 11, letterSpacing: "0.15em", textTransform: "uppercase", opacity: 0.8 }}>
-                  Clients Trust Us
-                </p>
-              </div>
-            </div>
+        {/* Top: label + headline side by side */}
+        <div className="about-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "flex-start", marginBottom: 72 }}>
+          <Fade>
+            <p style={{
+              fontSize: 11, letterSpacing: "0.28em", textTransform: "uppercase",
+              color: burg, marginBottom: 24, fontWeight: 500, fontFamily: "'Inter', sans-serif",
+            }}>
+              {t.label}
+            </p>
+            <h2 style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(36px, 4.5vw, 68px)",
+              fontWeight: 300, lineHeight: 1.08,
+              letterSpacing: "-0.025em", color: headColor,
+            }}>
+              {t.headline}
+            </h2>
           </Fade>
 
-          {/* Right — content */}
-          <div style={{ paddingBottom: 24 }}>
-            <Fade delay={0.1}>
-              <p style={{
-                fontSize: 11, letterSpacing: "0.28em", textTransform: "uppercase",
-                color: burg, marginBottom: 20, fontWeight: 500, fontFamily: "'Inter', sans-serif",
-              }}>
-                {t.label}
-              </p>
-              <h2 style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(34px, 4vw, 60px)",
-                fontWeight: 300, lineHeight: 1.1,
-                letterSpacing: "-0.02em",
-                color: headColor, marginBottom: 28,
-              }}>
-                {t.headline}
-              </h2>
-              <p style={{
-                fontSize: 16, lineHeight: 1.88, fontWeight: 300,
-                color: textMuted, marginBottom: 40,
-              }}>
-                {t.body}
-              </p>
-            </Fade>
-
-            {/* Key points */}
-            <Fade delay={0.2}>
-              <div style={{ display: "flex", flexDirection: "column", gap: 20, marginBottom: 44 }}>
-                {[
-                  { icon: "◈", text: t.mission },
-                  { icon: "◇", text: t.vision  },
-                ].map((item, i) => (
-                  <div key={i} style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
-                    <div style={{
-                      width: 40, height: 40, borderRadius: "50%",
-                      background: dark ? "rgba(120,81,169,0.15)" : "rgba(120,81,169,0.08)",
-                      border: `1px solid ${border}`,
-                      display: "flex", alignItems: "center", justifyContent: "center",
-                      color: burg, fontSize: 14, flexShrink: 0,
-                    }}>{item.icon}</div>
-                    <p style={{ fontSize: 14.5, lineHeight: 1.75, fontWeight: 300, color: text, paddingTop: 8 }}>
-                      {item.text}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </Fade>
-
-            <Fade delay={0.3}>
-              <button className="btn-primary">
-                Discover More →
-              </button>
-            </Fade>
-          </div>
+          <Fade delay={0.15}>
+            <p style={{
+              fontSize: 16, lineHeight: 1.9, fontWeight: 300,
+              color: textMuted, marginBottom: 40, marginTop: 56,
+            }}>
+              {t.body}
+            </p>
+            <button className="btn-primary">Discover More →</button>
+          </Fade>
         </div>
+
+        {/* Bottom: mission / vision / values row */}
+        <Fade delay={0.2}>
+          <div style={{
+            display: "grid", gridTemplateColumns: "repeat(3,1fr)",
+            borderTop: `1px solid ${border}`,
+          }}>
+            {[
+              { label: "Mission", body: t.mission },
+              { label: "Vision",  body: t.vision  },
+              { label: "Values",  body: t.values.join(" · ") },
+            ].map((item, i) => (
+              <div key={i} style={{
+                padding: "40px 36px",
+                borderRight: i < 2 ? `1px solid ${border}` : "none",
+              }}>
+                <p style={{
+                  fontSize: 10, letterSpacing: "0.24em", textTransform: "uppercase",
+                  color: burg, marginBottom: 16, fontWeight: 500, fontFamily: "'Inter', sans-serif",
+                }}>{item.label}</p>
+                <p style={{ fontSize: 15, lineHeight: 1.78, fontWeight: 300, color: text }}>
+                  {item.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Fade>
       </div>
     </section>
   );
