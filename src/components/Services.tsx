@@ -47,7 +47,7 @@ export default function Services({
                 fontSize: "clamp(38px, 4.5vw, 68px)",
                 fontWeight: 300, lineHeight: 1.08,
                 letterSpacing: "-0.022em",
-                color: dark ? "#F4F1EE" : "#1A0808",
+                color: dark ? "#F5F0FF" : "#1A0A2E",
                 maxWidth: 520,
               }}>
                 {t.title}
@@ -78,7 +78,7 @@ export default function Services({
             const bg = isDark
               ? burg
               : isAccent
-              ? (dark ? "#1C0A0A" : "#1A0808")
+              ? (dark ? "#0F0A1E" : "#1A0A2E")
               : surface;
             const cardText = isDark || isAccent ? "#F4F1EE" : text;
             const cardMuted = isDark

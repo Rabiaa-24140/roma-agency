@@ -4,7 +4,7 @@ interface RomaLogoProps {
   showTagline?: boolean;
 }
 
-export default function RomaLogo({ color = "#1E0B3A", size = 140, showTagline = true }: RomaLogoProps) {
+export default function RomaLogo({ color = "#7851A9", size = 140, showTagline = true }: RomaLogoProps) {
   const sparkle = "M 97,46 L 98.2,50.8 L 103,52 L 98.2,53.2 L 97,58 L 95.8,53.2 L 91,52 L 95.8,50.8 Z";
   const h = showTagline ? size * 0.52 : size * 0.40;
 

@@ -31,13 +31,13 @@ export default function RomaApp() {
   const isRTL = t.dir === "rtl";
 
   /* ── Color tokens ── */
-  const bg         = dark ? "#120720" : "#F4F1EE";
-  const surface    = dark ? "#1E0B3A" : "#FFFFFF";
-  const surfaceAlt = dark ? "#160830" : "#F0EBE3";
-  const text       = dark ? "#E8D8FF" : "#1A0A2E";
-  const textMuted  = dark ? "#9B85BB" : "#6B5F82";
-  const burg       = "#1E0B3A";
-  const border     = dark ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.07)";
+  const bg         = dark ? "#0C0818" : "#FAFAFA";
+  const surface    = dark ? "#130E24" : "#FFFFFF";
+  const surfaceAlt = dark ? "#0F0A1E" : "#F5F0FF";
+  const text       = dark ? "#F5F0FF" : "#1A0A2E";
+  const textMuted  = dark ? "#9985BB" : "#6B5F82";
+  const burg       = "#7851A9";
+  const border     = dark ? "rgba(255,255,255,0.07)" : "rgba(120,81,169,0.12)";
 
   /* ── Active section tracking ── */
   useEffect(() => {
@@ -99,7 +99,7 @@ export default function RomaApp() {
         className="mobile-menu"
         style={{
           position: "fixed", top: 0, left: 0, right: 0, bottom: 0, zIndex: 99,
-          background: dark ? "#0D0B1F" : "#F4F1EE",
+          background: dark ? "#0C0818" : "#FAFAFA",
           display: menuOpen ? "flex" : "none",
           flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 36,
         }}

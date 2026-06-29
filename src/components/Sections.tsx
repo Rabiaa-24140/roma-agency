@@ -6,8 +6,8 @@ import Fade from "./Fade";
    FEATURE BENTO  — 3 cards below hero
 ───────────────────────────────────────────────────────────────────────────── */
 export function FeatureBento({ dark, burg, text, textMuted, border, surface }: any) {
-  const card = dark ? "#1A0808" : "#FFFFFF";
-  const cardAlt = dark ? "#120505" : "#F0EBE3";
+  const card = dark ? "#130E24" : "#FFFFFF";
+  const cardAlt = dark ? "#0F0A1E" : "#F5F0FF";
 
   const features = [
     {
@@ -51,7 +51,7 @@ export function FeatureBento({ dark, burg, text, textMuted, border, surface }: a
                 {/* Icon */}
                 <div style={{
                   width: 48, height: 48, borderRadius: 14,
-                  background: f.dark ? "rgba(255,255,255,0.09)" : (dark ? "rgba(255,255,255,0.06)" : "rgba(90,6,6,0.07)"),
+                  background: f.dark ? "rgba(255,255,255,0.09)" : (dark ? "rgba(255,255,255,0.06)" : "rgba(120,81,169,0.08)"),
                   display: "flex", alignItems: "center", justifyContent: "center",
                   fontSize: 20,
                   color: f.dark ? "rgba(244,241,238,0.85)" : burg,
@@ -86,7 +86,7 @@ export function FeatureBento({ dark, burg, text, textMuted, border, surface }: a
    MARQUEE BAR  — scrolling trust strip
 ───────────────────────────────────────────────────────────────────────────── */
 export function MarqueeBar({ dark, burg }: any) {
-  const bg = dark ? "#120505" : "#1A0808";
+  const bg = dark ? "#0F0A1E" : "#1A0A2E";
   const items = [
     "Website Development", "Mobile Applications", "UI/UX Design",
     "Brand Identity", "AI Solutions", "Automation", "Custom Software",
@@ -131,8 +131,8 @@ export function MarqueeBar({ dark, burg }: any) {
    TECH ECOSYSTEM  — dashboard-style visual section
 ───────────────────────────────────────────────────────────────────────────── */
 export function TechEcosystem({ dark, burg, text, textMuted, border, surface }: any) {
-  const card = dark ? "#1A0808" : "#FFFFFF";
-  const cardAlt = dark ? "#120505" : "#F0EBE3";
+  const card = dark ? "#130E24" : "#FFFFFF";
+  const cardAlt = dark ? "#0F0A1E" : "#F5F0FF";
   const barData = [
     { label: "Web", pct: 94 }, { label: "Mobile", pct: 87 },
     { label: "AI", pct: 82 }, { label: "Brand", pct: 91 },
@@ -160,7 +160,7 @@ export function TechEcosystem({ dark, burg, text, textMuted, border, surface }: 
               fontSize: "clamp(36px, 4.2vw, 64px)",
               fontWeight: 300, lineHeight: 1.08,
               letterSpacing: "-0.022em",
-              color: dark ? "#F4F1EE" : "#1A0808",
+              color: dark ? "#F5F0FF" : "#1A0A2E",
             }}>
               Our Digital Intelligence<br />in Real Numbers
             </h2>
@@ -353,7 +353,7 @@ export function WhyRoma({ dark, burg, text, textMuted, border, surface }: any) {
             fontSize: "clamp(38px, 4.5vw, 68px)",
             fontWeight: 300, lineHeight: 1.08,
             letterSpacing: "-0.022em",
-            color: dark ? "#F4F1EE" : "#1A0808",
+            color: dark ? "#F5F0FF" : "#1A0A2E",
             marginBottom: 72, maxWidth: 580,
           }}>
             Built Different, By Design
@@ -381,7 +381,7 @@ export function WhyRoma({ dark, burg, text, textMuted, border, surface }: any) {
                 <h3 style={{
                   fontFamily: "'Cormorant Garamond', serif",
                   fontSize: 24, fontWeight: 400,
-                  color: dark ? "#F4F1EE" : "#1A0808",
+                  color: dark ? "#F5F0FF" : "#1A0A2E",
                   marginBottom: 16, letterSpacing: "-0.01em",
                 }}>
                   {p.title}
@@ -412,7 +412,7 @@ export function CTABlock({ dark, burg, onScrollToContact }: any) {
           <div
             className="bento-card bento-card-dark"
             style={{
-              background: "linear-gradient(135deg, #5A0606 0%, #3D0404 55%, #1A0202 100%)",
+              background: "linear-gradient(135deg, #7851A9 0%, #5A3A8C 55%, #2D1A5E 100%)",
               backgroundSize: "200% 200%",
               animation: "gradientFlow 8s ease infinite",
               padding: "80px 72px",
@@ -464,7 +464,7 @@ export function CTABlock({ dark, burg, onScrollToContact }: any) {
             <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
               <button className="btn-ghost-inv" onClick={onScrollToContact}
                 style={{
-                  background: "#F4F1EE", color: "#1A0808",
+                  background: "#F5F0FF", color: "#1A0A2E",
                   border: "none", fontWeight: 500,
                 }}
               >
@@ -508,7 +508,7 @@ export function About({ t, text, textMuted, border, burg, dark, surface }: any) 
               fontSize: "clamp(36px, 4.2vw, 64px)",
               fontWeight: 300, lineHeight: 1.1,
               letterSpacing: "-0.022em",
-              color: dark ? "#F4F1EE" : "#1A0808",
+              color: dark ? "#F5F0FF" : "#1A0A2E",
             }}>
               {t.headline}
             </h2>
@@ -581,10 +581,10 @@ export function About({ t, text, textMuted, border, burg, dark, surface }: any) 
    PORTFOLIO
 ───────────────────────────────────────────────────────────────────────────── */
 export function Portfolio({ t, textMuted, burg, dark, border }: any) {
-  const card = dark ? "#1A0808" : "#FFFFFF";
+  const card = dark ? "#130E24" : "#FFFFFF";
 
   return (
-    <section id="portfolio" style={{ padding: "100px 24px", background: dark ? "#0D0505" : "#F0EBE3" }}>
+    <section id="portfolio" style={{ padding: "100px 24px", background: dark ? "#0A071A" : "#F5F0FF" }}>
       <div style={{ maxWidth: 1160, margin: "0 auto" }}>
         <Fade>
           <p style={{
@@ -604,7 +604,7 @@ export function Portfolio({ t, textMuted, burg, dark, border }: any) {
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(38px, 4.5vw, 68px)",
               fontWeight: 300, lineHeight: 1.08, letterSpacing: "-0.022em",
-              color: dark ? "#F4F1EE" : "#1A0808",
+              color: dark ? "#F5F0FF" : "#1A0A2E",
             }}>
               {t.title}
             </h2>
@@ -634,7 +634,7 @@ export function Portfolio({ t, textMuted, burg, dark, border }: any) {
                 <div style={{
                   height: i % 2 === 0 ? 280 : 220,
                   background: dark
-                    ? `linear-gradient(140deg, #2D0404 ${i * 8}%, #0D0505)`
+                    ? `linear-gradient(140deg, #3A1A7A ${i * 8}%, #0A071A)`
                     : `linear-gradient(140deg, #e8ddd4, #d4c4b8)`,
                   display: "flex", alignItems: "center", justifyContent: "center",
                   position: "relative", overflow: "hidden",
@@ -685,7 +685,7 @@ export function Portfolio({ t, textMuted, burg, dark, border }: any) {
                   <h3 style={{
                     fontFamily: "'Cormorant Garamond', serif",
                     fontSize: 22, fontWeight: 400,
-                    color: dark ? "#F4F1EE" : "#1A0808",
+                    color: dark ? "#F5F0FF" : "#1A0A2E",
                     marginBottom: 8,
                   }}>
                     {p.name}
@@ -728,7 +728,7 @@ export function Process({ t, textMuted, border, burg, dark }: any) {
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(38px, 4.5vw, 68px)",
               fontWeight: 300, lineHeight: 1.08, letterSpacing: "-0.022em",
-              color: dark ? "#F4F1EE" : "#1A0808",
+              color: dark ? "#F5F0FF" : "#1A0A2E",
             }}>
               {t.title}
             </h2>
@@ -761,7 +761,7 @@ export function Process({ t, textMuted, border, burg, dark }: any) {
                 <h3 style={{
                   fontFamily: "'Cormorant Garamond', serif",
                   fontSize: 19, fontWeight: 400,
-                  color: dark ? "#F4F1EE" : "#1A0808",
+                  color: dark ? "#F5F0FF" : "#1A0A2E",
                   marginBottom: 12,
                 }}>
                   {step.name}
@@ -854,7 +854,7 @@ export function Pricing({
   t, surface, text, textMuted, border, burg, isRTL, onScrollToContact, dark,
 }: any) {
   return (
-    <section id="pricing" style={{ padding: "100px 24px", background: dark ? "#120505" : "#F0EBE3" }}>
+    <section id="pricing" style={{ padding: "100px 24px", background: dark ? "#0F0A1E" : "#F5F0FF" }}>
       <div style={{ maxWidth: 1160, margin: "0 auto" }}>
         <Fade>
           <p style={{
@@ -874,7 +874,7 @@ export function Pricing({
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(38px, 4.5vw, 68px)",
               fontWeight: 300, lineHeight: 1.08, letterSpacing: "-0.022em",
-              color: dark ? "#F4F1EE" : "#1A0808",
+              color: dark ? "#F5F0FF" : "#1A0A2E",
             }}>
               {t.title}
             </h2>
@@ -1034,7 +1034,7 @@ export function Contact({ t, text, textMuted, border, burg, dark }: any) {
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(38px, 4.5vw, 68px)",
                 fontWeight: 300, lineHeight: 1.08, letterSpacing: "-0.022em",
-                color: dark ? "#F4F1EE" : "#1A0808", marginBottom: 24,
+                color: dark ? "#F5F0FF" : "#1A0A2E", marginBottom: 24,
               }}>
                 {t.title}
               </h2>
@@ -1093,7 +1093,7 @@ export function Contact({ t, text, textMuted, border, burg, dark }: any) {
                 <h3 style={{
                   fontFamily: "'Cormorant Garamond', serif",
                   fontSize: 32, fontWeight: 400,
-                  color: dark ? "#F4F1EE" : "#1A0808",
+                  color: dark ? "#F5F0FF" : "#1A0A2E",
                   marginBottom: 16,
                 }}>
                   Message Sent
@@ -1144,7 +1144,7 @@ export function Contact({ t, text, textMuted, border, burg, dark }: any) {
                 >
                   <option value="" disabled>{t.form.type}</option>
                   {t.form.types.map((tp: string, i: number) => (
-                    <option key={i} value={tp} style={{ color: "#1A0808" }}>{tp}</option>
+                    <option key={i} value={tp} style={{ color: "#1A0A2E" }}>{tp}</option>
                   ))}
                 </select>
 
@@ -1159,7 +1159,7 @@ export function Contact({ t, text, textMuted, border, burg, dark }: any) {
                 >
                   <option value="" disabled>{t.form.budget}</option>
                   {t.form.budgets.map((b: string, i: number) => (
-                    <option key={i} value={b} style={{ color: "#1A0808" }}>{b}</option>
+                    <option key={i} value={b} style={{ color: "#1A0A2E" }}>{b}</option>
                   ))}
                 </select>
 
@@ -1199,7 +1199,7 @@ export function Footer({ t, lang, onLangChange, navLabels, burg }: any) {
   const sparkle = "M 97,46 L 98.2,50.8 L 103,52 L 98.2,53.2 L 97,58 L 95.8,53.2 L 91,52 L 95.8,50.8 Z";
 
   return (
-    <footer style={{ background: "#0D0505", color: "#F5F5F5", padding: "72px 24px 40px" }}>
+    <footer style={{ background: "#0C0818", color: "#F5F5F5", padding: "72px 24px 40px" }}>
       <div style={{ maxWidth: 1160, margin: "0 auto" }}>
         <div
           className="footer-grid"
